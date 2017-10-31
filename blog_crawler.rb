@@ -38,16 +38,32 @@ end
 	#end
 #end
 
-class Crawler
-	def crawl
-		entry = BlogEntry.new
-		entry.author = "Sarina"
-		entry.title = "Paper Paper Paper"
+#class Crawler
+#	def crawl
+#		entry = BlogEntry.new
+#		entry.author = "Sarina"
+#		entry.title = "Paper Paper Paper"
+#
+#		display_name = "#{entry.title}, By: #{entry.author}"
+#		puts display_name
+#	end
+#end
 
-		display_name = "#{entry.title}, By: #{entry.author}"
-		puts display_name
+require 'nokogiri'
+require 'mechanize'
+
+class Crawler
+	def crawl (url)
+		agent = Mechanize.new 
+		agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+		page = agent.get (url)
+		puts page.uri
+
 	end
 end
+
+
 
 
 

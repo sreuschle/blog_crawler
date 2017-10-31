@@ -5,12 +5,16 @@
 
 require './blog_crawler.rb'
 
-new_blog = BlogEntry.new
-new_blog.author = "Sarina"
+#new_blog = BlogEntry.new
+#new_blog.author = "Sarina"
 
-puts new_blog.author
+#puts new_blog.author
+
+#crawler = Crawler.new
+#crawler.crawl
+
+
+url = 'http://gapintelligence.com/blog'
 
 crawler = Crawler.new
-crawler.crawl
-
-
+crawler.crawl(url)
